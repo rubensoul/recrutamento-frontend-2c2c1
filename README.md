@@ -39,4 +39,4 @@ Desenvolver uma aplicação `SPA` responsiva para busca, listagem e detalhamento
 - Endpoint para busca de clãs: [`https://api.royaleapi.com/clan/search?name={{clanName}}`](https://api.royaleapi.com/clan/search?name={{clanName}});
 - Endpoint para detalhamento do clã: [`https://api.royaleapi.com/clan/{{clanTag}}`](https://api.royaleapi.com/clan/{{clanTag}}).
 
-O canal indicado para dúvidas é criar uma [`issue`](https://github.com/7comminformatica/recrutamento-dotnet-2c2c1/issues) e entrar em contato com a empresa para informar sobre as dúvidas, afim de manter uma base de conhecimento centralizada neste repositório, onde dúvidas anteriores poderão ser pesquisadas e agilizar a resposta ao entrar em contato com a empresa.
+O canal indicado para dúvidas é criar uma [`issue`](https://github.com/7comminformatica/recrutamento-frontend-2c2c1/issues) e entrar em contato com a empresa para informar sobre as dúvidas, afim de manter uma base de conhecimento centralizada neste repositório, onde dúvidas anteriores poderão ser pesquisadas e agilizar a resposta ao entrar em contato com a empresa.
