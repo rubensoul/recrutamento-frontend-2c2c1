@@ -15,23 +15,22 @@ export class TokenInterceptor implements HttpInterceptor {
     constructor(public storage: NativeStorage) {
     }
 
-    // Persiste o token para todas as requisições
+    // Pega o token para todas as requisições
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
         this.storage.getItem('token').then(
             data => {
-                this.token = JSON.parse(data);
+                this.token = data;
             },
             error => {
                 this.token = null;
             }
         );
 
-
         if (this.token != null) {
             request = request.clone({
                 setHeaders: {
-                    Authorization: `Bearer ${this.token.access_token}`
+                    Authorization: `Bearer ${this.token}`
                 }
             });
         }
