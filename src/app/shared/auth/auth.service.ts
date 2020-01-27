@@ -13,8 +13,6 @@ export class AuthService {
   constructor(
     private storage: NativeStorage,
   ) { 
-    // Pega o token fixo e manda pra função
-    this.setToken(environment.token);
   }
 
   // Seta o token no storage do aplicativo para a persistencia com o interceptador

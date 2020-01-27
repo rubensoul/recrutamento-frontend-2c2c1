@@ -1,3 +1,9 @@
+# INSTRUÇÃO DO DESENVOLVEDOR
+
+Foi desenvolvido um interceptador com base no storage nativo das plataformas IOS e Android, portanto onde ficará armazenado o token, não precisando refazer a chamada do cabeçalho para cada chamada. Mas para testes, é necessário um simulador/emulador.
+Para o funcionamento no navegador, foi implementado também a chamada do token diretamente no serviço de requisição.
+
+
 # Recrutamento 7COMm (frontend-2C2C1)
 
 O `recrutamento-frontend-2c2c1` é um teste aplicado pela [7COMm Serviços e Soluções em TI](https://7comm.com.br) para recrutamento de profissionais `frontend`.

@@ -21,6 +21,7 @@ export class TokenInterceptor implements HttpInterceptor {
         this.storage.getItem('token').then(
             data => {
                 this.token = data;
+                console.log(this.token)
             },
             error => {
                 this.token = null;
