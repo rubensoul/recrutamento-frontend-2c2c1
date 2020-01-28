@@ -1,9 +1,29 @@
+<!-- Back button with custom text and icon -->
 <ion-header>
   <ion-toolbar>
-    <ion-title>details</ion-title>
-  </ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+      [text]="buttonText">
+    </ion-back-button>
+  </ion-buttons>
+  <ion-title>Detalhe</ion-title>
+</ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-card *ngIf="clan">
+    <ion-thumbnail>
+      <img src="{{badge.image}}">
+    </ion-thumbnail>
+    <ion-card-header>
+      <ion-card-subtitle>{{clan.score}}</ion-card-subtitle>
+      <ion-card-title>{{clan.name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+     {{ clan.description}}
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

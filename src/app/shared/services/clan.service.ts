@@ -24,7 +24,6 @@ export class ClanService {
   getClanById(clan?: string): Observable<any> {
     let params = {
       'clan': clan ? clan : '',
-      // 'score': score ? score : '',
     }
     return this.requestService.get(`clan.php`, params);
   }

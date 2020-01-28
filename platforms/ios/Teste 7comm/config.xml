@@ -50,7 +50,7 @@
     <name>Teste 7comm</name>
     <description>Aplicativo teste para a 7COMm</description>
     <author email="rubens@hositec.com.br" href="http://rubensoul.com.br/">Rubens Chagas Junior</author>
-    <content original-src="index.html" src="http://localhost:8100" />
+    <content original-src="index.html" src="http://localhost:8101" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -58,7 +58,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <allow-navigation href="http://localhost:8100" sessionid="d09a9f4b" />
+    <allow-navigation href="http://localhost:8101" sessionid="b9107697" />
     <access origin="http://localhost:8080" />
     <allow-navigation href="http://localhost:8080/*" />
     <allow-intent href="itms:*" />

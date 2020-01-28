@@ -12,8 +12,8 @@
   </ion-searchbar>
 
   <ion-list *ngIf="content">
-    <ion-item *ngFor="let item of content">
-      <ion-label>{{ item.name }} 
+    <ion-item *ngFor="let item of content" detail >
+      <ion-label [routerLink]="['/details', item.tag]" routerLinkActive="router-link-active" >{{ item.name }} 
         <p slot="end">{{ item.score }}</p>
       </ion-label>
     </ion-item>

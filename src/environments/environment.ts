@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost/hositec/backend7comm/',
+  api: 'http://rubensoul.com.br/test/',
   token: '12345'
 };
 
