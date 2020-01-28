@@ -11,12 +11,12 @@ export class ClanService {
     private requestService: RequestService,
   ) { }
 
-
-  // Get All or search
+  
+  // Get search
   getClan(name?: string, score?: any): Observable<any> {
     let params = {
       'name': name ? name : '',
-      'score': score ? score : '',
+      // 'score': score ? score : '',
     }
     return this.requestService.get(`search`, params);
   }

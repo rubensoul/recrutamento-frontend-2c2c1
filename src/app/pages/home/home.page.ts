@@ -44,7 +44,7 @@ export class HomePage {
         return of<any>([]);
       })
     ).subscribe(res => {
-      this.content = res.data;
+      this.content = res;
     });
 
   }  

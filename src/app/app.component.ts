@@ -26,6 +26,6 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.authService.setToken(environment.token);
-    });
+     });
   }
 }

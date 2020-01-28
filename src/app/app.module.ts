@@ -31,7 +31,8 @@ import { TokenInterceptor } from './shared/auth/interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    
 
   ],
   bootstrap: [AppComponent]

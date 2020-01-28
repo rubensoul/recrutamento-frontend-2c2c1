@@ -7,6 +7,7 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -21,20 +22,23 @@ export class TokenInterceptor implements HttpInterceptor {
         this.storage.getItem('token').then(
             data => {
                 this.token = data;
-                console.log(this.token)
             },
             error => {
                 this.token = null;
             }
         );
 
-        if (this.token != null) {
-            request = request.clone({
-                setHeaders: {
-                    Authorization: `Bearer ${this.token}`
+       if (this.token == null) {
+           this.token = environment.token;
+       } 
+
+       console.log(this.token)
+
+        request = request.clone({
+            setHeaders: {
+                'Authorization': 'Bearer ' + this.token,
                 }
-            });
-        }
+        });
 
         return next.handle(request);
 

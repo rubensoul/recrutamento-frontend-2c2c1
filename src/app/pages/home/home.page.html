@@ -11,4 +11,12 @@
   <ion-searchbar type="text" debounce="500" showCancelButton="focus" (ionInput)="searchRequest($event)" animated>
   </ion-searchbar>
 
+  <ion-list *ngIf="content">
+    <ion-item *ngFor="let item of content">
+      <ion-label>{{ item.name }} 
+        <p slot="end">{{ item.score }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

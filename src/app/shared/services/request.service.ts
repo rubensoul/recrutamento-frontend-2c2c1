@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpErrorResponse, HttpClient } from '@angular/common/http';
-import { AuthService } from '../auth/auth.service';
 import { environment } from 'src/environments/environment';
 import { throwError, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -18,13 +17,14 @@ export class RequestService {
 
   constructor(
     public http: HttpClient,
-    private authService: AuthService
   ) {
     this.apiUrl = environment.api;
+    // this.prepareHeader();
   }
 
   // Cabeçalhos
   private prepareHeader() {
+
 
   }
 
@@ -47,17 +47,6 @@ export class RequestService {
     return this.http.get(
       id ? `${this.apiUrl}${endpoint}${id}` : `${this.apiUrl}${endpoint}`,
       { headers: this.header, params }
-    )
-      .pipe(map(this.extractData))
-      .pipe(catchError(this.handleError))
-  }
-
-  // Post
-  public post(endpoint: string, postObject: any): Observable<any> {
-    return this.http.post(
-      `${this.apiUrl}${endpoint}`,
-      postObject,
-      { headers: this.header }
     )
       .pipe(map(this.extractData))
       .pipe(catchError(this.handleError))
