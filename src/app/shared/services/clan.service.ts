@@ -18,6 +18,14 @@ export class ClanService {
       'name': name ? name : '',
       // 'score': score ? score : '',
     }
-    return this.requestService.get(`search`, params);
+    return this.requestService.get(`index.php`, params);
+  }
+
+  getClanById(clan?: string): Observable<any> {
+    let params = {
+      'clan': clan ? clan : '',
+      // 'score': score ? score : '',
+    }
+    return this.requestService.get(`clan.php`, params);
   }
 }

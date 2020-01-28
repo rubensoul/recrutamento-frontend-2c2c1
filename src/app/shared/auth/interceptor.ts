@@ -11,36 +11,37 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
+    
+token: any = null;
 
-    token: any = null;
-    constructor(public storage: NativeStorage) {
-    }
-
-    // Pega o token para todas as requisições
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-        this.storage.getItem('token').then(
-            data => {
-                this.token = data;
-            },
-            error => {
-                this.token = null;
-            }
+constructor(public storage: NativeStorage) {
+ 
+}
+    
+// Pega o token para todas as requisições
+intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    
+    this.storage.getItem('token').then(
+        data => {
+            this.token = data;
+        },
+        error => {
+            this.token = null;
+        }
         );
-
-       if (this.token == null) {
-           this.token = environment.token;
-       } 
-
-       console.log(this.token)
-
-        request = request.clone({
-            setHeaders: {
-                'Authorization': 'Bearer ' + this.token,
-                }
-        });
-
-        return next.handle(request);
-
+        
+    if (this.token == null) {
+        this.token = environment.token;
+    } 
+        
+    request = request.clone({
+        setHeaders: {
+            'Authorization': this.token,
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        }
+    });
+        
+    return next.handle(request);
+        
     }
 }
