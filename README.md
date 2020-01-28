@@ -10,7 +10,7 @@ Para compreender melhor, invés de abrir o proxy do ionic e angular, foi feito u
 
 # Arquivo de backend
 
-Na pasta: `backend` arquivos `index.php` e `clan.php` foram commitados em um ambiente funcional hospedado no site rubensou.com.br/test 
+Na pasta: `backend` arquivos `index.php` e `clan.php` foram commitados em um ambiente funcional hospedado no site rubensoul.com.br/test 
 
 # Testes e funcionalidades
 
