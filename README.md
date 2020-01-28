@@ -1,8 +1,25 @@
-# INSTRUÇÃO DO DESENVOLVEDOR
+# INSTRUÇÃO/RECOMENDAÇÕES DO DESENVOLVEDOR
 
-Foi desenvolvido um interceptador com base no storage nativo das plataformas IOS e Android, portanto onde ficará armazenado o token, não precisando refazer a chamada do cabeçalho para cada chamada. Mas para testes, é necessário um simulador/emulador.
-Para o funcionamento no navegador, foi implementado também a chamada do token diretamente no serviço de requisição.
+Durante o desenvolvimento foi analisado que o backend da aplicação não aceita requisições via browser, que é o core dos frameworks front-end. Limitando assim o acesso via cabeçalho. Com o conhecido erro CORS.
 
+Isso se dá pois, o token desta aplicação é único e não é gerado via um login único como padrão, sendo assim, poderia ser facilmente visualizado e copiado via requisição do cabeçalho. 
+
+Para manter a arquitetura do projeto `IONIC` e `ANGULAR`, e tentar seguir as praticas comuns adotadas pelo front-end, foi criado 2 arquivos para intermediar a requisição. Feitos em `PHP`, assim o token é protegido durante as requisições. 
+
+Para compreender melhor, invés de abrir o proxy do ionic e angular, foi feito um novo backend para tratar a aplicação e devolver de forma aceitável e sem perder ou expor a segurança o token.
+
+# Arquivo de backend
+
+Na pasta: `backend` arquivos `index.php` e `clan.php` foram commitados em um ambiente funcional hospedado no site rubensou.com.br/test 
+
+# Testes e funcionalidades
+
+Testado em simulador IOS e Android;
+Testado em browser;
+
+# Testar em browser
+
+comando: `ionic serve`
 
 # Recrutamento 7COMm (frontend-2C2C1)
 
