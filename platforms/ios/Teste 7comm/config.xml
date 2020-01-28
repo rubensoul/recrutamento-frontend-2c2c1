@@ -58,7 +58,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <allow-navigation href="http://localhost:8101" sessionid="b9107697" />
+    <allow-navigation href="http://localhost:8101" sessionid="008df647" />
     <access origin="http://localhost:8080" />
     <allow-navigation href="http://localhost:8080/*" />
     <allow-intent href="itms:*" />

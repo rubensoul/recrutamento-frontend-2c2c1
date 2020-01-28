@@ -33,10 +33,10 @@ intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<an
     if (this.token == null) {
         this.token = environment.token;
     } 
-        
+    // caso o token não seja barrado pelo cors, pode usar o ('Authorization': this.token), na chamada abaixo
     request = request.clone({
         setHeaders: {
-            'Authorization': this.token,
+            
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
         }
     });

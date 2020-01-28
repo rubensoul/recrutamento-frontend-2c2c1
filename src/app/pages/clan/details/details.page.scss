@@ -1,0 +1,13 @@
+@import "../../../../theme/custom.scss";
+
+ion-toolbar{
+    --background: var(--ion-color-dark-tint);
+    --color: white
+
+}
+ion-content{
+    --background: var(--ion-color-dark);
+}
+ion-card{
+    --background: white
+}

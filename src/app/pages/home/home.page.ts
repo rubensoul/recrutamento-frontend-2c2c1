@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Subject, Observable, of } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap, catchError } from 'rxjs/operators';
+import {  switchMap, catchError, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { ClanService } from 'src/app/shared/services/clan.service';
+import { LoadingService } from 'src/app/shared/services/loading.service';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ export class HomePage {
 
 
   constructor(
-    private clanService: ClanService
+    private clanService: ClanService,
+    private loading: LoadingService
   ) {}
 
   // Requisição de todos os valores
@@ -28,8 +30,10 @@ export class HomePage {
       this.searchTerms.next('');
     }
 
+    this.loading.present()
+
     this.searchTerms.pipe(
-      debounceTime(500), // tempo de pausa entre os eventos, assim não faz requisição enquanto o user ainda está escrevendo
+      debounceTime(0), // tempo de pausa entre os eventos, assim não faz requisição enquanto o user ainda está escrevendo
       distinctUntilChanged(), // ignora se o próximo termo de pesquisa for o mesmo que o anterior
       switchMap(
         term =>
@@ -45,6 +49,7 @@ export class HomePage {
       })
     ).subscribe(res => {
       this.content = res;
+      this.loading.dismiss()
     });
 
   }  
